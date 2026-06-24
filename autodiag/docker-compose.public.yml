@@ -1,0 +1,7 @@
+services:
+  autodiag:
+    image: anssi/fcsc2026-pwn-autodiag:latest
+    ports:
+      - "4000:4000"
+    tmpfs:
+      - /run/ivi:rw,uid=999,gid=999,mode=0755

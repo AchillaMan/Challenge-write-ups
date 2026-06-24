@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.acme.ivi.ServiceManager
+Exec=/usr/local/sbin/ivi_dbusd_wrapper

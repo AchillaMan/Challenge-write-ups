@@ -1,0 +1,47 @@
+#ifndef IVI_DBUS_IFACE_H
+#define IVI_DBUS_IFACE_H
+
+#define IVI_DBUS_ADDRESS "unix:path=/run/ivi/bus.sock"
+#define IVI_DBUS_SERVICE "com.acme.ivi.ServiceManager"
+#define IVI_DBUS_PATH "/com/acme/ivi/ServiceManager"
+#define IVI_DBUS_IFACE "com.acme.ivi.ServiceManager"
+
+static const char *kIntrospectionXml =
+    "<node>"
+    "  <interface name='com.acme.ivi.ServiceManager'>"
+    "    <method name='Ping'>"
+    "      <arg type='s' name='reply' direction='out'/>"
+    "    </method>"
+    "    <method name='ReadFile'>"
+    "      <arg type='s' name='relpath' direction='in'/>"
+    "      <arg type='ay' name='data' direction='out'/>"
+    "    </method>"
+    "    <method name='WriteFile'>"
+    "      <arg type='s' name='relpath' direction='in'/>"
+    "      <arg type='ay' name='data' direction='in'/>"
+    "      <arg type='b' name='ok' direction='out'/>"
+    "    </method>"
+    "    <method name='CopyFile'>"
+    "      <arg type='s' name='src_relpath' direction='in'/>"
+    "      <arg type='s' name='dst_relpath' direction='in'/>"
+    "      <arg type='b' name='ok' direction='out'/>"
+    "    </method>"
+    "    <method name='ListDir'>"
+    "      <arg type='s' name='relpath' direction='in'/>"
+    "      <arg type='as' name='entries' direction='out'/>"
+    "    </method>"
+    "    <method name='GetDeviceInfo'>"
+    "      <arg type='s' name='info' direction='out'/>"
+    "    </method>"
+    "    <method name='RunSelfTest'>"
+    "      <arg type='s' name='test_id' direction='in'/>"
+    "      <arg type='s' name='result' direction='out'/>"
+    "    </method>"
+    "    <method name='RunUpdate'>"
+    "      <arg type='s' name='payload' direction='in'/>"
+    "      <arg type='s' name='result' direction='out'/>"
+    "    </method>"
+    "  </interface>"
+    "</node>";
+
+#endif
