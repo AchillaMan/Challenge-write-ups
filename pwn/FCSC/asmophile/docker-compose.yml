@@ -1,0 +1,5 @@
+services:
+  asmophile:
+    image: anssi/fcsc2021-pwn-asmophile:latest
+    ports:
+      - "4000:4000"

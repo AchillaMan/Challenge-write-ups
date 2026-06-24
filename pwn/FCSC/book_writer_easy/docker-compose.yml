@@ -1,0 +1,5 @@
+services:
+  book-writer-easy:
+    image: anssi/fcsc2024-pwn-book-writer-easy:latest
+    ports:
+      - "4000:4000"
