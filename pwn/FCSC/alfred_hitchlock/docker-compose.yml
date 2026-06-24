@@ -1,0 +1,5 @@
+services:
+  alfred-hitchlock:
+    image: anssi/fcsc2019-pwn-alfred-hitchlock:latest
+    ports:
+      - "4000:4000"
