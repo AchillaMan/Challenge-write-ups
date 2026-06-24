@@ -496,7 +496,6 @@ tmp
 usr
 var
 ./printflag
-FCSC{a6aec868d6ea0391656786b72aa7a333e4c2a35180897dc38cfc96330faaf685}
 ```
 
 
