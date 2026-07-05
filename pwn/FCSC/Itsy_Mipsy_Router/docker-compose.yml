@@ -1,0 +1,20 @@
+services:
+  itsy-mipsy-router:
+    image: anssi/fcsc2021-pwn-itsy-mipsy-router-router:latest
+    ports:
+      - "4000:4000"
+    networks:
+      - itsy-mipsy-router-external
+      - itsy-mipsy-router-internal
+
+  itsy-mipsy-router-filer:
+    image: anssi/fcsc2021-pwn-itsy-mipsy-router-filer:latest
+    ports:
+      - "80:80"
+    networks:
+      - itsy-mipsy-router-internal
+
+networks:
+  itsy-mipsy-router-external:
+  itsy-mipsy-router-internal:
+    internal: true
