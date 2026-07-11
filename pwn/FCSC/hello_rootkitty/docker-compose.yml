@@ -1,0 +1,5 @@
+services:
+  hello-rootkitty:
+    image: anssi/fcsc2020-pwn-hello-rootkitty:latest
+    ports:
+      - "2222:22"
