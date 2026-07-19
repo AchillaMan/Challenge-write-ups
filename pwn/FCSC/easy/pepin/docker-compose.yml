@@ -1,0 +1,5 @@
+services:
+  pepin:
+    image: anssi/fcsc2020-pwn-pepin:latest
+    ports:
+      - "2222:22"
