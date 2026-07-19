@@ -1,0 +1,5 @@
+services:
+  cheapie:
+    image: anssi/fcsc2021-pwn-cheapie:latest
+    ports:
+      - "4000:4000"
