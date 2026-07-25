@@ -34,8 +34,8 @@ def read(addr):
 def exit():
     io.sendlineafter(b'>>> ', b'4')
 
-chunk0 = malloc(256, b"AAAA")
-chunk1 = malloc(256, b"BBBB")
+chunk0 = malloc(0x100, b"AAAA")
+chunk1 = malloc(0x100, b"BBBB")
 log.success(f"chunk0_addr: {hex(chunk0)}")
 log.success(f"chunk1_addr: {hex(chunk1)}")
 
