@@ -1,0 +1,5 @@
+services:
+  cheapolata:
+    image: anssi/fcsc2024-pwn-cheapolata:latest
+    ports:
+      - "4000:4000"
