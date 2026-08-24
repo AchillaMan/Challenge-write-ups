@@ -1,0 +1,7 @@
+_import = __loader__.load_module
+codecs = _import('codecs')
+print(codecs.open('/proc/self/maps', 'r').read())
+import ctypes
+libflag_dump = ctypes.string_at(lib_flag.so base address, 40000)
+binascii = _import('binascii')
+binascii.hexlify(libflag_dump)

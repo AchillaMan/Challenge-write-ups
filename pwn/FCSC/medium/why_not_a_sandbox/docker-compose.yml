@@ -1,0 +1,5 @@
+services:
+  why-not-a-sandbox:
+    image: anssi/fcsc2020-pwn-why-not-a-sandbox:latest
+    ports:
+      - "4000:4000"
